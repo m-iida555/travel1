@@ -1,0 +1,42 @@
+<div class="around-line">
+<div class="side-option">
+  
+</div>
+
+<div class="room-registration">
+  <%= form_with url: :reservations,method: :post,model: @reservation do |f| %>
+   <table>
+     <th>ルーム登録情報</th>
+     <tr>
+       <th class="hissu-logo"><%= f.label :roomname, "ルーム名",:class=>"roomlabel" %></th>
+       <td><%= f.text_field :roomname,placeholder:"ルーム名を入力", :class=>"roomfield" %></td>
+     </tr>
+       <tr>
+       <th class="hissu-logo"><%= f.label :roominfo, "ルーム紹介",:class=>"roomlabel" %></th>
+       <td><%= f.text_field :roominfo,placeholder:"ルーム説明", :class=>"roomfield" %></td>
+     </tr>
+       <tr>
+       <th class="hissu-logo"><%= f.label :money, "料金",:class=>"roomlabel" %></th>
+       <td><%= f.text_field :money,placeholder:"一日あたりの費用", :class=>"roomfield" %></td>
+     </tr>
+       <tr>
+       <th class="hissu-logo"><%= f.label :area, "住所",:class=>"roomlabel" %></th>
+       <td><%= f.text_field :area,placeholder:"住所を入力", :class=>"roomfield" %></td>
+     </tr>
+       <tr>
+       <th class="hissu-logo"><%= f.label :roompic, "ルーム画像",:class=>"roomlabel" %></th>
+       <td>
+         <% if @reservation.roompic? %>
+          <%= image_tag @reservation.roompic.url,:class=>"profile-img" %>
+            <% else %>
+            <%= image_tag "/assets/default.jpeg", :size => '100x100',:class=>"profile-img" %>
+          <% end %>
+     </tr>
+     <tr>
+     <td><%= f.submit "登録",:class=>"blue-button" %></td>
+     </tr>
+   </table>
+  </div>
+  <% end %>
+  
+</div>

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+  devise_for :installs
   devise_for :users
+  devise_scope :user do
+  delete 'logout', to: 'devise/sessions#destroy'
+end
 
   
   
