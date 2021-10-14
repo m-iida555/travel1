@@ -1,0 +1,35 @@
+<div class="clearfix">
+
+<div class="side-option">
+    <%= render"shared/accountprofile" %>
+</div>
+
+<div class="update">
+<div class="update-around">
+<%= form_for @password do |f| %>
+<table>
+    <tr>
+    <th class="account-font">アカウント</th>
+    </tr>
+  
+
+    <tr>
+    <th class="account-font">メールアドレス</th>
+    <td class="account-font"><%= @password.email %></td>
+    </tr>
+
+
+    <tr>
+    <th class="account-font">パスワード</th>
+    <td class="account-font"><%= @password.password %></td>
+    </tr>
+    
+    <tr>
+      <td><%= link_to "編集", edit_password_path(@password.id), :class=>"edit-button" %></td>
+    </tr>
+    
+</table>
+<% end %>
+</div>
+</div>
+</div>

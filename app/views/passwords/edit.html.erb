@@ -1,0 +1,39 @@
+<div class="clearfix">
+
+
+
+<div class="update edit-position">
+<div class="update-around">
+  <%= render"shared/error",obj:@password %>
+<%= form_with model: @password,url: :password,method: :put do |f| %>
+<h4 class="account-font">アカウント編集</h4>
+<table>
+    <tr>
+    <th><%= f.label :email , "メールアドレス", :class=>"account-font" %></th>
+    <td class="box-position"><%= f.text_field :email , :class=>"password-box" %></td>
+    </tr>
+    
+    <tr>
+    <th><%= f.label :password ,"変更後のパスワード",  :class=>"account-font"  %></th>
+    <td class="box-position"><%= f.text_field :password, :class=>"password-box" %></td>
+    </tr>
+    
+    <tr>
+    <th><%= f.label :password_confirmation ,"パスワード確認用", :class=>"account-font"  %></th>
+    <td class="box-position"><%= f.password_field :password_confirmation,:class=>"password-box" %></td>
+    </tr>
+    
+  　 <tr>
+    <th><%= f.label :current_password ,"現在のパスワード", :class=>"account-font"  %></th>
+    <td class="box-position"><%= f.password_field :current_password, :class=>"password-box" %></td>
+    </tr>
+  </table>
+  <ul>
+    <li><%= f.submit "更新",:class=>"blue-button" %></li>
+    <li><%= link_to "戻る", password_path(@password.id),:class=>"edit-link button-space" %></li>
+  </ul>
+
+<% end %>
+</div>
+</div>
+</div>

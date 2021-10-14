@@ -1,0 +1,24 @@
+<div class="out-line">
+<% if flash.notice %>
+<p class="notice"><%= flash.notice %></p>
+<% end %>
+<div class="account-round">
+<h3>新しいアカウントを作成</h3>
+
+<%= form_with url: :users, mathod: :post do |f| %>
+
+<ul>
+    <li class="hissu-logo"><%= f.text_field :name ,placeholder:"ユーザー名",:class=>"profile-box" %></li>
+    <li class="hissu-logo"><%= f.text_field :email ,placeholder:"メールアドレス",:class=>"profile-box" %></li>
+    <li class="hissu-logo"><%= f.text_field :password ,placeholder:"パスワード",:class=>"profile-box" %></li>
+    <li class="hissu-logo"><%= f.text_field :password_confirmation ,placeholder:"パスワードを再確認",:class=>"profile-box" %></li>
+
+</ul>
+
+<ul>
+<li><%= f.submit "新しいアカウントを作成" ,:class=>"blue-button" %></li> <%#　submitと""の間には,が不要 %>
+<li><%= link_to"すでにアカウントをお持ちの方はログイン" ,:users,:class=>"new-link" %></li>
+</ul>
+<% end %>
+</div>
+</div>

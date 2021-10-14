@@ -1,0 +1,39 @@
+<img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg" alt="背景の山" class="background-pic">
+<%= form_for('reservations') do |a| %>
+<div class="area-box">
+  <p class=non-challenge>Potepan Shareでまだ体験したことのない旅をしよう</p>
+  <p class="area-search-title">エリア</p>
+  <%= a.text_field :area, :class=>'area-search' %>
+  <div class=area-search-button><%= a.submit '探す', :class=>"area-search-button"  %></div>
+</div>
+<div class="recommend">
+  <p>おすすめのエリア</p>
+  <div class="top-cities">
+    <div class="recommend">
+      <a href="">  <!-- ここの画像リンクは東京の宿泊ページを作成できてから -->
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="東京" class="city-pic">
+      </a>
+      <p class="recommend-city">東京</p>
+    </div>
+    <div class="recommend">
+      <a href="">
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" alt="大阪" class="city-pic">
+      </a>
+      <p class="recommend-city">大阪</p>
+    </div>
+    <div class="recommend">
+      <a href="">
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" alt="京都" class="city-pic">
+      </a>
+      <p class="recommend-city">京都</p>
+    </div>
+    <div class="recommend">
+      <a href="">
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" alt="札幌" class="city-pic">
+      </a>
+      <p class="recommend-city">札幌</p>
+    </div>
+  </div>
+</div>
+
+<% end %>

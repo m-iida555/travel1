@@ -1,0 +1,412 @@
+ul{
+  list-style: none;
+}
+
+li{
+  list-style: none;
+  font-size: 15px;
+}
+
+table{
+  width: auto;
+  height: auto;
+}
+
+tr{
+  width: auto;
+  height: auto;
+}
+
+
+.background-pic{
+  width: 1310px;
+  height: 570px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+
+
+.header-design{
+  background-color: #000;
+height: 90px;
+}
+
+.header-search{
+  width: 150px;
+  height: 25px;
+}
+
+.area-box{
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  padding-top: 40px;
+  padding-left: 20px;
+  background-color: #fff;
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+
+
+.logo-pic{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.area{
+  display: inline-block;
+  background-color: #000;
+  position: absolute;
+  top: 35px;
+}
+
+.keyword{
+  display: inline-block;
+  background-color: #000;
+  position: absolute;
+  top: 35px;
+  left: 385px;
+}
+
+.non-challenge{
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+.area-search{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 380px;
+  height: 25px;
+}
+
+.area-search-button{
+  width: 389px;
+  height: 35px;
+  background-color: #1e90ff;
+  color: #fff;
+  font-size: 17px;
+  text-align: center
+}
+
+.area-search-title{
+  margin-bottom: 0px;
+}
+
+.area-button-size{
+  width: 380px;
+  height: 25px;
+}
+
+footer{
+  background-color: #000;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  height: 80px;
+  margin-top: 0px;
+  
+}
+
+.clearfix::after{
+content: "";
+display: block;
+clear: both;
+}
+
+.city-pic{
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.recommend{
+  display: inline-block;
+  justify-content: center;
+  position: relative;
+
+}
+
+.top-cities{
+  width: 1409px;
+  height: 300px;
+  text-align: center;
+}
+
+.recommend p {
+  font-size: 20px;
+  border-weight: bold;
+  margin-left: 250px;
+}
+
+.recommend-city{
+  position: absolute;
+  top: 230px;
+  left: 80px;
+  color: #fff;
+}
+
+.account-button{
+  background-color: #1e90ff;
+  height: 30px;
+  width: 200px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.account-round{
+  border: 3px solid #a9a9a9;
+  text-align: center;
+  width: 900px;
+  height: 400px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 400px;
+}
+
+
+.profile-box{
+  font-size: 20px;
+  height: 30px;
+  width: 600px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.hissu-logo::before{
+  content: "必須";
+  color: #fff;
+  background-color: #ff4500;
+  border-radius: 5px;
+  padding: 4px;
+  margin-right: 5px;
+}
+
+
+.update{
+  background-color: #fff;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.update-around{
+  margin-top: 100px;
+  background-color: transparent;
+  border: 3px solid #bfbfbf;
+  width: 1100px;
+  height: 800px;
+  margin-left: 200px;
+  margin-bottom: 100px;
+  padding: 0;
+  display: inline-block; //子要素がinline-blockでないと、親要素にいれたtext-align: center; が効かないので注意
+  float: left;
+}
+
+
+hr{
+  width: 330px;
+  color: #000;
+}
+
+.show-button{
+  background-color: #1e90ff;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+h4{
+  background-color: transparent;
+  margin: 0;
+}
+
+.profile-img{
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000;
+  border-radius: 32px;
+}
+
+.notice{
+  text-align: center;
+  width: 1900px;
+  background-color: #ff4500;
+}
+
+.side-contents{
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.side-option{
+  float: left;
+  height: 1000px;
+  width: 300px;
+  border: 5px solid #000;
+  margin: 100px 0px;
+}
+
+.profile-font{
+  font-size: 25px;
+  text-align: center;
+}
+
+.width-contents{
+  margin-top: 100px;
+}
+
+.partial ul li:first-child{
+  margin-top: 60px;
+}
+
+.out-line{
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.out-line-login{
+  width: 900px;
+  height: 500px;
+  border: 3px solid #a9a9a9;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 400px;
+  padding-top: 100px;
+}
+
+.new-link{
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.font-position{
+  margin-left: 150px;
+}
+
+.blue-button{
+  width: 650px;
+  height: 50px;
+  background-color: #4169e1;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+
+.password-box{
+  font-size: 20px;
+  height: 30px;
+  width: 600px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.box-position{
+  margin-left: 300px;
+}
+
+.account-font{
+  font-size: 20px;
+}
+
+.button-space{
+  margin-top: 10px;
+}
+
+.edit-link{
+  width: 650px;
+  height: 50px;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.update-around ul li:last-child{
+  width: 650px;
+  height: 52px;
+  margin-top: 10px;
+  margin-right: 300px;
+  background-color: #4169e1;
+  border-radius: 3px;
+}
+
+.edit-position{
+  position: relative;
+}
+
+.login{
+  background-color: #fff;
+}
+
+.logout{
+  background-color: #fff;
+}
+
+
+
+.menu-click{
+  color: #fff;
+}
+
+.left-side{
+  position: relative;
+  width: 300px;
+}
+
+.right-side{
+  height: 10px;
+  background-color: #000;
+  margin: 0;
+  position: absolute;
+  top: 40px;
+  left: 1300px;
+  width: 465px;
+}
+
+
+
+.menu-click{
+  margin-top: 40px;
+  height: 50px;
+}
+
+#open{
+  background-color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: 57px;
+  left: 225px;
+}
+
+.login-name{
+  color: #fff;
+  font-size: 20px;
+}
+
+.name-position{
+  width: auto;
+  white-space: nowrap;
+  position: absolute;
+  top: -8px;
+  left: 90px;
+}
+
+.img-position{
+  position: absolute;
+  top: -16px;
+  left: 300px;
+}

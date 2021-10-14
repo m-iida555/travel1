@@ -1,0 +1,21 @@
+<div class="out-line">
+<% if flash.notice %>
+<p class="notice"><% flash.notice %></p>
+<% end %>
+
+<div class="out-line-login">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <p class="profile-box" "font-position">ログイン</p>
+   <ul>
+    <li class="hissu-logo"><%= f.email_field :email, autofocus: true, placeholder: "メールアドレス",:class=>"profile-box" %></li>
+    <li class="hissu-logo"><%= f.password_field :password, placeholder: "パスワード" ,:class=>"profile-box"%></li>
+</ul>
+ 
+
+  <ul>
+    <li><%= f.submit "ログイン",:class=>"blue-button" %></li>
+    <li><%= render"devise/shared/links" %></li>
+</ul>
+<% end %>
+</div>
+</div>

@@ -1,0 +1,5 @@
+<% if @user.img? %>
+    <%= image_tag @user.img.url,:class=>"profile-img" %>
+      <% else %>
+      <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+    <% end %>

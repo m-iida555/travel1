@@ -1,0 +1,30 @@
+<h3>予約済みルーム一覧</h3>
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>ルーム画像</th>
+      <th>ルーム名</th>
+      <th>ルーム紹介</th>
+      <th>合計金額</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>予約確定日時</th>
+    </tr>
+  </thead>
+  
+  <% @reservations.each do |f| %>
+  <tbody>
+    <tr>
+      <th><%= f.roompic %></th>
+      <th><%= f. roomname%></th>
+      <th><%= f.roominfo %></th>
+      <th><%= f.money %></th>
+      <th><%= f.start %></th>
+      <th><%= f.end %></th>
+      <th><%= f.updated_at %></th>
+    </tr>
+  </tbody>
+</table>
+<% end %>

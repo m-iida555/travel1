@@ -1,6 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.hosts << "ddd74e70ce914981ade01121162f861d.vfs.cloud9.ap-northeast-1.amazonaws.com"
+  config.web_console.whitelisted_ips='153.246.230.98'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -73,4 +75,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

@@ -11,6 +11,74 @@
   </head>
 
   <body>
+    <header class="header-design">
+      <div class="left-side">
+      <%= form_for('reservations') do |f| %>
+      <a href="https://ddd74e70ce914981ade01121162f861d.vfs.cloud9.ap-northeast-1.amazonaws.com/reservations/top"><img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="ロゴ" class="logo-pic"></a>
+      <div class=area>
+        <%= f.text_field :area,placeholder:"エリア", :class=>'header-search' %>
+        </div>
+        <div class=keyword>
+          <%= f.text_field :keyword,placeholder:"キーワード", :class=>'header-search' %>  
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="right-side">
+      <% if user_signed_in? %>
+        <!-- 折り畳み -->
+        <!-- ユーザー名表示 -->
+      <p class="name-position login-name">
+        <% if current_user %>
+          <%= current_user.name %>
+        <% end %>
+        </p> <!-- :class=>"login-name" をはずしています。あるとエラーになるため　-->
+      
+      <!-- 画像表示 -->
+      <div class="img-position">
+      <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+        <a style="cursor:pointer;" class="menu-click">
+          <% if current_user.img? %>
+          　<%= image_tag current_user.img.url,:class=>"profile-img" %>
+          <% else %>
+            <%= image_tag "/assets/images/default.jpeg", :size=> '80*80' %>
+          <% end %>
+        </a> 
+      </div>
+      </div>
+            <!--// 折り畳み -->
+            
+            <!-- 折り畳まれ部分 --> <%# 　クリックで展開 %>
+      <div id="open" style="display:none;clear:both;">
+        <ul>
+          <li class="user-icon-list">
+            <%#ここの変数定義はまだ終わっていない%>
+          </li>
+          <li class="user-icon-list"><%= link_to "予約済み一覧", reservations_hotel_index_path %></li>
+          <li class="user-icon-list">登録済みルーム一覧</li>
+          <li class="user-icon-list"><%= link_to "設定", edit_user_path(current_user) %></li>
+          <li class="user-icon-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </div>
+        
+      <% else %>
+        <div class="login">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          <%= link_to "登録する", new_user_registration_path, class: 'post' %>
+        </div>
+      <% end %>
+    </div>
+
+
+    
+
+    </header>
+    
+    
     <%= yield %>
+    
+    
+    
+    <footer>@ 2020 POTEPAN.INC.</footer>
   </body>
 </html>

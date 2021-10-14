@@ -1,0 +1,57 @@
+
+
+<div class="clearfix">
+<% if flash.notice %>
+<p class="notice"><%= flash.notice %></p>
+<% end %>
+
+<div class="side-option">
+    <%= render"shared/accountprofile" %>
+</div>
+
+<div class="update-around">
+    <div class="update">
+<%= form_for @user do |f| %>
+<table>
+    
+<tr class="profile-font width-contents">
+<th>プロフィール</th><td></td>
+</tr>
+    
+<tr class="profile-font width-contents">
+<th>
+<td>
+<% if @user.img? %>
+<%= image_tag @user.img.url,:class=>"profile-img" %>
+  <% else %>
+  <%= image_tag "/assets/default.jpeg", :size => '100x100',:class=>"profile-img" %>
+<% end %>
+</td>
+</th>
+</tr>
+
+
+<tr class="width-contents">
+<th><%= f.label :img ,"アイコン画像",:class=>"profile-font"  %></th>
+<td><%= f.file_field :img,accept: 'image/jpeg,image/gif,image/png' %></td>
+</tr>
+
+<tr class="width-contents">
+<th><%= f.label :name ,"名前",:class=>"profile-font" %></th>
+<td><%= f.text_field :name ,:class=>"profile-box" %></td>
+</tr>
+
+<tr class="width-contents">
+<th><%= f.label :introduction ,"自己紹介",:class=>"profile-font" %></th>
+<td><%= f.text_field :introduction  ,:class=>"profile-box" %></td>
+</tr>
+
+<tr class="width-contents">
+<td><%= f.submit "編集" ,:class=>"profile-font"%></td>
+</tr>
+
+</table>
+<% end %>
+</div>
+</div>
+</div>

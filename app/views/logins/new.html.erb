@@ -1,0 +1,20 @@
+<div class="out-line">
+  
+<% if flash.notice %>
+<p class="notice"><%= flash.notice %></p>
+<% end %>
+
+  <div class="out-line-login">
+  <%= form_with url: :logins,method: :post, local: true do |f| %>
+  <p class="profile-box font-position">ログイン</p>
+  <ul>
+    <li class="hissu-logo"><%= f.text_field :email,placeholder:"メールアドレス",:class=>"profile-box" %></li>
+    <li class="hissu-logo"><%= f.text_field :password,placeholder:"パスワード",:class=>"profile-box" %></li>
+  </ul>
+  <ul>
+  <li><%= f.submit "ログイン",:class=>"blue-button" %></li>
+  <li><%= link_to "新しいアカウントを作成", new_password_path,:class=>"profile-box new-link" %></li>
+  </ul>
+  <% end %>
+  </div>
+</div>
