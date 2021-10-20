@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
-  devise_for :installs
-  devise_for :users
-  devise_scope :user do
-  delete 'logout', to: 'devise/sessions#destroy'
-end
+  #devise_for :installs
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   
   
   get 'reservations/top'
   get 'reservations/hotel_index'
-  post 'logins/new'
+  get 'reservations/room_reserve'
+  post 'reservations/create_reserve'
+  get 'reservations/reservation_check'
+  post 'reservations/user_params'
+  #get '/reservations/new', to: redirect('/reservations/room_reserve.:%{id}', status: 301)
+
 
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

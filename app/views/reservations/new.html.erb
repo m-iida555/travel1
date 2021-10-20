@@ -1,10 +1,11 @@
 <div class="around-line">
 <div class="side-option">
-  
+  <!--後程記述-->
 </div>
 
 <div class="room-registration">
-  <%= form_with url: :reservations,method: :post,model: @reservation do |f| %>
+  <%#= form_with url: reservations_path,model: @reservation,local: true do |f| %>
+  <%= form_for @reservation do |f| %>
    <table>
      <th>ルーム登録情報</th>
      <tr>
@@ -26,17 +27,13 @@
        <tr>
        <th class="hissu-logo"><%= f.label :roompic, "ルーム画像",:class=>"roomlabel" %></th>
        <td>
-         <% if @reservation.roompic? %>
-          <%= image_tag @reservation.roompic.url,:class=>"profile-img" %>
-            <% else %>
-            <%= image_tag "/assets/default.jpeg", :size => '100x100',:class=>"profile-img" %>
-          <% end %>
+         <%= f.file_field :roompic ,accept: 'image/jpeg,image/gif,image/png' %>
+       </td>
      </tr>
      <tr>
-     <td><%= f.submit "登録",:class=>"blue-button" %></td>
+     <td><%= f.submit "登録" ,:class=>"blue-button" %></td>
      </tr>
    </table>
   </div>
   <% end %>
-  
 </div>

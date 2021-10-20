@@ -11,22 +11,19 @@ class ApplicationController < ActionController::Base
   
   protected
   
-  def configure_permitted_parameters　#deviseの初期ダウンロード時にデータをモデルに渡すストロングパラメータの設定がされていないものがあるので、下記の様に追記する必要がある。
-     # サインアップ時にnameのストロングパラメータを追加
+  
+  def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    # アカウント編集の時にnameとprofileのストロングパラメータを追加
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduction])
-    
     devise_parameter_sanitizer.permit(:sign_in, keys: [:remember_created_at])
-    
   end
   
   def after_sign_in_path_for(resource)
-    edit_user_path(id: current_user) # ログイン後に遷移するpath
+    edit_user_path(id: current_user) #ログイン後に遷移するpath
   end
 
   def after_sign_out_path_for(resource)
-    reservations_top_path # ログアウト後に遷移するpath
+    reservations_top_path #ログアウト後に遷移するpath
   end
   
 end
