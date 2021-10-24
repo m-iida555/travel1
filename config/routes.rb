@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   resources :reservations
   resources :passwords
   resources :logins
+  resources :rooms
 
 end

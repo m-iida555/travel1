@@ -7,14 +7,16 @@ class ReservationsController < ApplicationController
   end
   
   def new
-   @reservation=Reservation.new
+   @room_info=Room.find(params[:id])
+   @reserve=Reservation.new
+   @user=User.find(params[:img])
   end
 
   def create
-     @reservation=Reservation.new(params.require(:reservation).permit(:roompic, :roomname, :roominfo, :money, :area))
-    if @reservation.save
-    flash[:notice]="新規登録しました"
-    redirect_to reservations_room_reserve_path(@reservation.id)
+   @reserve=Reservation.new(params.require(:reservation).permit(:start,:end,:persons))
+   if @reserve.save
+    flash[:notice]="予約できました"
+    redirect_to edit_reservation_path(@reserve.id)
    else
     redirect_to new_reservation_path
    end
@@ -45,7 +47,6 @@ class ReservationsController < ApplicationController
    @room_info=Reservation.find_by(params[:roompic, :roomname, :roominfo, :money, :area])
    @reserve=Reservation.new
    @user=User.find(params[:img])
-   binding.pry
   end
   
     #確定前の最終確認画面
@@ -60,7 +61,7 @@ class ReservationsController < ApplicationController
   end
   
   def create_reserve 
-   @reserve=Reserve.new(user_params)
+   @reserve=Reservation.new(user_params)
    if @reserve.save
     flash[:notice]="予約できました"
     redirect_to reservation_path(@reserve.id)

@@ -1,0 +1,23 @@
+  <div class="around-line">
+    <table>
+        <td>予約内容確認</td>
+        <td><%= "¥#{@total_money}/日" %></td>
+        <th>開始日</th>
+        <td></td>
+        <th>終了日</th>
+        <td></td>
+        <td><%= "使用日数：#{@reservation.start}日" %></td>
+        <td><%= "人数：#{@reservation.persons}人" %></td>
+        <th>合計金額</th>
+        <td><%= "#{@total_money}" %></td>
+        <th>上記内容でよろしければ「予約確定」を押してください</th>
+    </table>
+    
+    <div class="button-area">
+      <ul>
+        <li><%= f.submit "予約を確定", :class=>"blue-button" %></li>
+        <li><%= redirect_to :reservations_room_reserve,"ルーム詳細に戻る",:class=>"back-link" %></li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,9 +1,12 @@
 <div class="around-line">
   <div class="left-reserve">
     <div class="room-img">
-      <% if @room_info.roompic? %>
-      <%= image_tag @room_info.roompic.url %>
+      <% if @reservaiton.roompic %>
+      <%= image_tag @reservation.room.img %>
       <% end %>
+      <%# if @room_info.roompic? %>
+      <%#= image_tag @room_info.roompic.url %>
+      <%# end %>
     </div>
     <div class="user-icon">
       <% if @user.img %>

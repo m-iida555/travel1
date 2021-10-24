@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :rooms
   mount_uploader :roompic, RoompicUploader
 end
