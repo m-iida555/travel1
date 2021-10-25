@@ -1,4 +1,4 @@
 class Room < ApplicationRecord
-  belongs_to :users, optional: true
-  belongs_to :reservations, optional: true
+  belongs_to :user, optional: true
+  has_many :reservations
 end

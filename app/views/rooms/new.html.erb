@@ -34,6 +34,7 @@
      <td><%= f.submit "登録" ,:class=>"blue-button" %></td>
      </tr>
    </table>
+  <%= f.hidden_field :user_id, value:current_user.id %>
   </div>
   <% end %>
 </div>

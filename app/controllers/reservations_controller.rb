@@ -7,9 +7,9 @@ class ReservationsController < ApplicationController
   end
   
   def new
-   @room_info=Room.find(params[:id])
+   @room=Room.find(params[:room_id])
    @reserve=Reservation.new
-   @user=User.find(params[:img])
+   @user=User.find(params[:current_user.img])
   end
 
   def create
@@ -42,6 +42,10 @@ class ReservationsController < ApplicationController
   def top
 
   end 
+  
+  
+  
+  #以下は利用しない
   
   def room_reserve #部屋の予約画面兼部屋の情報
    @room_info=Reservation.find_by(params[:roompic, :roomname, :roominfo, :money, :area])
