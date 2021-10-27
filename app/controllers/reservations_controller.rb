@@ -7,22 +7,22 @@ class ReservationsController < ApplicationController
   end
   
   def new
-   @room=Room.find(params[:room_id])
-   @reserve=Reservation.new
-   @user=User.find(params[:current_user.img])
+   @room=Room.find(params[:id])
+   @reservation=Reservation.new
+   @user=User.find(params[:current_user])
   end
 
   def create
-   @reserve=Reservation.new(params.require(:reservation).permit(:start,:end,:persons))
-   if @reserve.save
-    flash[:notice]="予約できました"
-    redirect_to edit_reservation_path(@reserve.id)
-   else
-    redirect_to new_reservation_path
-   end
+   @reservation=Reservation.new(params.permit(:start, :end, :persons))
+  if @reservaiton.save
+    flash[:notice]="登録完了しました。"
+    redirect_to new_reservation_path(@reservation.id)
+  else
+    redirect_to room_path(@room.id)
+  end 
   end 
   
-  def show #部屋の最終確認後、部屋情報画面
+  def show #部屋の最終確認
     
   end
   def edit

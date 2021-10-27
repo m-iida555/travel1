@@ -7,13 +7,8 @@ Rails.application.routes.draw do
   
   get 'reservations/top'
   get 'reservations/hotel_index'
-  get 'reservations/room_reserve'
-  post 'reservations/create_reserve'
-  get 'reservations/reservation_check'
   post 'reservations/user_params'
   #get '/reservations/new', to: redirect('/reservations/room_reserve.:%{id}', status: 301)
-
-
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
@@ -22,6 +17,8 @@ Rails.application.routes.draw do
   resources :reservations
   resources :passwords
   resources :logins
-  resources :rooms
+  resources :rooms do
+    resources :reservations, only: [:create]
+  end
 
 end

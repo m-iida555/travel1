@@ -4,8 +4,9 @@
 </div>
 
 <div class="room-registration">
+  <%#= form_with url: new_reservation_path,model: @room,method: :get do |f| %>
   <%= form_with model: @room do |f| %>
-  <%#= form_for @room do |f| %>
+
    <table>
      <th>ルーム登録情報</th>
      <tr>
@@ -34,7 +35,9 @@
      <td><%= f.submit "登録" ,:class=>"blue-button" %></td>
      </tr>
    </table>
-  <%= f.hidden_field :user_id, value:current_user.id %>
+   <%= f.hidden_field :user_id,value: current_user.id %>
+   <%= f.hidden_field :room_id,value: @room.id %> 
   </div>
   <% end %>
+
 </div>
