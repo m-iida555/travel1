@@ -1,8 +1,9 @@
 <div class="around-line">
+  <div class="inline">
   <div class="left-reserve">
     <div class="room-img">
       <% if @room.roompic? %>
-      <%= image_tag @room.roompic %>
+      <%= image_tag @room.roompic.url %>
       <% end %>
     </div>
     <div class="user-icon">
@@ -14,34 +15,41 @@
     </div>
     <div class="room-area">
     <div class="name-width">
-      <%= @room_info.roomname :class=>"room-name" %>
+      <%= @room.roomname %>
     </div>
     <div class="name-width">
-      <%= @room_info.area :class=>"area-name" %>
+      <%= @room.area %>
     </div>
     </div>
     <hr>
     <div class="intro-width">
-      <%= @room_info.roominfo :class=>"info-size" %>
+      <%= @room.roominfo %>
     </div>
   </div>
   
   <div class="right-reserve">
-    <% form_with url: reservation_path,method: :put do |f| %>
-      <ul>
-        <li><p>¥</p><%= @reserve.money :class>"money-size" %><p>/日</p></li>
+    <ul>
+      <% @money.each do |money| %>
+        <li><p>¥</p><%= money.money %><p>/日</p></li>
+      <% end %>
+      <%= form_with url: reservations_confirm_path do |f| %>
+        <!--li><%#= f.label :money, :class>"money-size" %></li-->
         <li><%= f.label :start,"開始日",:class=>"date-size" %></li>
         <li><%= f.date_field :start,placeholder:"年/月/日",:class=>"date-box" %></li>
         <li><%= f.label :end,"終了日",:class=>"date-size" %></li>
         <li><%= f.date_field :end,placeholder:"年/月/日",:class=>"date-box" %></li>
         <li><%= f.label :persons,"人数",:class=>"date-size" %></li>
-        <li><%= f.date_field :persons,:class=>"date-box" %></li>
+        <li><%= f.text_field :persons,:class=>"date-box" %></li>
         <li><%= f.submit "予約する",:class=>"button-box" %></li>
-      </ul>
+      
       <%= f.hidden_field :roomname, value: @room.roomname %>
-      <%= f.hidden_field :roominfo, value: @room.roominfo %>
+      <%#= f.hidden_field :roominfo, value: @room.roominfo %>
       <%= f.hidden_field :money, value: @room.money %>
-      <%= f.hidden_field :roompic, value: @room.roompic %>
+      <%#= f.hidden_field :roompic, value: @room.roompic %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <%= f.hidden_field :user_id, value: @roon.user_id %>
     <% end %>  
+    </ul>
+  </div>
   </div>
 </div>

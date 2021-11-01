@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :introduction, length: { maximum: 50 }
+  validates :email, presence: true, uniqueness: true
   has_many :rooms
   has_many :reservations
 end

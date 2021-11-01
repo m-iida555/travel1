@@ -55,7 +55,7 @@
             <%#ここの変数定義はまだ終わっていない%>
           </li>
           <li class="user-icon-list"><%= link_to "ルーム登録", new_room_path %></li>
-          <li class="user-icon-list"><%= link_to "予約済み一覧", reservations_path %></li>
+          <li class="user-icon-list"><%= link_to "予約済み一覧", rooms_path %></li>
           <li class="user-icon-list"><%= link_to "登録済みルーム一覧", rooms_path %></li>
           <li class="user-icon-list"><%= link_to "設定", edit_user_path(current_user) %></li>
           <li class="user-icon-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>

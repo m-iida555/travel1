@@ -413,5 +413,31 @@ h4{
 
 .around-line{
  width: 1600px;
- height: 600px;
+ height: auto;
+}
+
+.room-index{
+  width: 800px;
+  height: auto;
+}
+
+.rooms-font{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.left-reserve{
+  width: 900px;
+  height: auto;
+}
+.right-reserve{
+  width: 600px;
+  height: auto;
+  border: 20px solid;
+}
+
+.inline{
+  width: 1600px;
+  height: auto;
+  display: inline-block;
 }

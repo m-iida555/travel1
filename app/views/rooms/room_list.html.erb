@@ -17,7 +17,7 @@
  <% @rooms.each do |room| %>
   <tr>
     <td><%= room.roompic %></td>
-    <td><%= link_to room.roomname, new_reservation_path(room.id) %></td> <!-- link_toのパスがshowの時、controllerのshowアクションでparamsからidを拾っていれば、link_toでid指定はいらない。roomだけ　<%#=link_to "編集する",edit_blog_path(blog.id) %>）-->
+    <td><%= link_to room.roomname, room_path(room.id) %></td> <!-- link_toのパスがshowの時、controllerのshowアクションでparamsからidを拾っていれば、link_toでid指定はいらない。roomだけ　<%#=link_to "編集する",edit_blog_path(blog.id) %>）-->
     <td><%= room.roominfo %></td>
     <td><%= room.money %></td>
     <td><%= room.created_at%></td>

@@ -1,0 +1,25 @@
+  <div class="around-line">
+    <div class="reservation-show">
+      <table>
+        <% @reservation.each do |f| %>
+        <tr>
+          <th>予約した部屋</th>
+          <td><%= f.roomname %> </td>
+          </tr>
+        <tr>
+          <th>開始日</th>
+          <td><%= f.start %></td>
+          </tr>
+        <tr>
+          <th>終了日</th>
+          <td><%= f.end %></td>
+          </tr>
+        <tr>
+          <th>価格</th>
+          <td><%= f.total_money %><p>円</p></td>
+          </tr>
+          <% end %>
+      </table>
+    </div>
+  </div>
+  

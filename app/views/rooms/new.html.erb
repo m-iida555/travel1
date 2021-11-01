@@ -31,12 +31,11 @@
          <%= f.file_field :roompic ,accept: 'image/jpeg,image/gif,image/png' %>
        </td>
      </tr>
+        <%= f.hidden_field :user_id,value: current_user.id %>
      <tr>
      <td><%= f.submit "登録" ,:class=>"blue-button" %></td>
      </tr>
    </table>
-   <%= f.hidden_field :user_id,value: current_user.id %>
-   <%= f.hidden_field :room_id,value: @room.id %> 
   </div>
   <% end %>
 
